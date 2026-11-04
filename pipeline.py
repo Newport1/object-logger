@@ -1,4 +1,4 @@
-import os, io, re, csv, json, base64, shutil, zipfile, subprocess, tempfile, datetime, secrets
+import os, io, re, csv, json, base64, shutil, zipfile, subprocess, tempfile, datetime, secrets, sys, multiprocessing
 from pathlib import Path
 
 import numpy as np
@@ -86,6 +86,36 @@ def _crop_black(pano):
     return pano[y:y + h, x:x + w]
 
 
+STITCH_TIMEOUT = 90  # seconds; repetitive texture (a wall of identical boxes) can make feature matching run for hours
+
+
+def _stitch_worker(paths, out):
+    frames = [cv2.imread(p) for p in paths]
+    try:
+        st = cv2.Stitcher_create(cv2.Stitcher_PANORAMA)
+    except AttributeError:
+        st = cv2.Stitcher.create(cv2.Stitcher_PANORAMA)
+    status, pano = st.stitch(frames)
+    if status == cv2.Stitcher_OK:
+        cv2.imwrite(out, pano)
+    sys.exit(int(status))
+
+
+def _stitch_with_timeout(paths, out):
+    # ponytail: cv2 can't be interrupted in-thread, so stitch in a child process we can kill
+    ctx = multiprocessing.get_context("spawn")
+    p = ctx.Process(target=_stitch_worker, args=(paths, out), daemon=True)
+    p.start()
+    p.join(STITCH_TIMEOUT)
+    if p.is_alive():
+        p.kill()
+        p.join()
+        raise RuntimeError(f"stitch timed out after {STITCH_TIMEOUT} s")
+    if p.exitcode != 0 or not os.path.exists(out):
+        raise RuntimeError(f"stitch status {p.exitcode}")
+    return cv2.imread(out)
+
+
 def build_master(path, source_type, force_fallback=False):
     path = str(path)
     if source_type == "image":
@@ -114,13 +144,7 @@ def build_master(path, source_type, force_fallback=False):
             sel = [frames[i] for i in pick]
             if len(sel) < 2:
                 raise RuntimeError("too few frames")
-            try:
-                st = cv2.Stitcher_create(cv2.Stitcher_PANORAMA)
-            except AttributeError:
-                st = cv2.Stitcher.create(cv2.Stitcher_PANORAMA)
-            status, pano = st.stitch(sel)
-            if status != cv2.Stitcher_OK:
-                raise RuntimeError(f"stitch status {status}")
+            pano = _stitch_with_timeout([str(files[i]) for i in pick], os.path.join(td, "pano.png"))
             pano = _crop_black(pano)
             fh, fw = sel[0].shape[:2]
             ph, pw = pano.shape[:2]
