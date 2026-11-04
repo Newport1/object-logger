@@ -30,8 +30,9 @@ Three decoupled layers, each replaceable, joined by one file-based log (`log.jso
    v2 plugs into the same `Item` fields: Muse Spark auto-ID from the crop, barcode read, price lookup, export adapters.
 
 ## Demo
-15 s walk-past video → master → numbers bloom → click #17 → fix one miss live → type two prices → export CSV.
-"15 seconds of video → a catalog."
+7 s walk-past video → panorama master → numbers bloom → click #9 (a leg fragment of #3), select #3, Merge →
+type two prices → export CSV. Then open the photo sample: 44 figures, 44 rows, zero fixes.
+"Seven seconds of video → a catalog."
 
 ## Results on the demo scenes
 - **Photo, 44-figure Bearbrick tray** (`sessions/sample`): hand count 44 · system count 44 (0% error) with prompt
