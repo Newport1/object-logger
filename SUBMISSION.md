@@ -40,6 +40,10 @@ type two prices → export CSV. Then open the photo sample: 44 figures, 44 rows,
 - **Video, 7 s phone walk-past of a toy shelf** (`sessions/sample-video`): 4K HEVC portrait → 14 frames → 7 sharp
   frames stitched into a 2048×2031 panorama that passed the gate · hand count 19 · system count 20 (+5%); the extra is
   a leg fragment of one figure, fixed with one Merge click → exact.
+- Ten Pexels stress scenes (5 videos, 5 photos): manga spines 40 (panorama), carved animals 54 (panorama), clay dolls
+  20 (panorama), cameras behind glass 26 (best-frame fallback, walk too short), film boxes 119 (stitch timed out on
+  repetitive texture → best frame), snack bags 60, sardine tins 72, soda bottles 74, folk figurines 69, bar bottles 48.
+  Two scenes needed a second prompt ("object" → 0, "figurine" → 54; "can" → 0, "package" → 72).
 - Earlier stand-in (Wikimedia retro shelf): 37 items; supermarket aisle "product" → 23 vs "can" → 99.
 - API spend for all dev + demo: under $1 of $150 (every image call is $0.0025).
 

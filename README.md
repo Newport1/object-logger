@@ -25,14 +25,21 @@ ffmpeg must be on PATH for video input.
    on the master for anything SAM missed. **Re-run prompt** re-segments with a new phrase.
 4. Fill name / UPC / price / qty / notes inline. Export **CSV**, **JSON**, or a **ZIP** with crops + master.
 
-The prompt matters more than anything else: on a supermarket aisle, "product" returned 23 cans and "can" returned 99.
-Re-running is one click and about a quarter of a cent.
+The prompt matters more than anything else. Use one concrete noun for the thing on the shelf; generic words often
+return nothing. Re-running is one click and about a quarter of a cent. Measured on 12 scenes:
+
+| Scene | Works | Returns 0 or far fewer |
+|---|---|---|
+| Collectible figures, carved animals, clay dolls | `toy`, `figurine` | `figure`, `object` |
+| Supermarket cans | `can` (99) | `product` (23) |
+| Flat sardine tins | `package` (72), `product` (38) | `can`, `tin` |
+| Snack bags, bottles, manga spines, cameras, film boxes | `bag`, `bottle`, `book`, `camera`, `box` | |
 
 ## How it works
 
 ```
 photo or video ──► master frame ──► SAM 3.1 (image mode) ──► numbered items ──► editable log ──► CSV / JSON / ZIP
-                   video: ffmpeg 2 fps → Laplacian sharpness → OpenCV panorama (quality-gated) → else best frame
+                   video: ffmpeg 2 fps → Laplacian sharpness → OpenCV panorama (quality-gated, 90 s cap) → else best frame
 ```
 
 - `pipeline.py` — master frame, SAM call, mask decode (`meta-sam-parser`), area filter + IoU dedupe,
