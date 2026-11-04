@@ -33,12 +33,14 @@ Three decoupled layers, each replaceable, joined by one file-based log (`log.jso
 15 s walk-past video → master → numbers bloom → click #17 → fix one miss live → type two prices → export CSV.
 "15 seconds of video → a catalog."
 
-## Results on the demo scene (fill in)
-- Stand-in scene (CC BY-SA retro collectibles shelf, Wikimedia Commons): 37 items from prompt "object" in ~20 s;
-  synthetic 10 s walk-past of the same scene stitched into a 2042×719 panorama that passed the gate.
-- Supermarket aisle: "product" → 23 items, "can" → 99 items. The editable prompt is the lever.
-- Items in scene (hand count): __  · System count before fixes: __ (±__%) · After fixes: exact
-- API spend for all dev + demo: $__ of $150
+## Results on the demo scenes
+- **Photo, 44-figure Bearbrick tray** (`sessions/sample`): hand count 44 · system count 44 (0% error) with prompt
+  "toy", one API call, ~30 s end to end. Prompt "figure" returned 0: the editable prompt is the lever.
+- **Video, 7 s phone walk-past of a toy shelf** (`sessions/sample-video`): 4K HEVC portrait → 14 frames → 7 sharp
+  frames stitched into a 2048×2031 panorama that passed the gate · hand count 19 · system count 20 (+5%); the extra is
+  a leg fragment of one figure, fixed with one Merge click → exact.
+- Earlier stand-in (Wikimedia retro shelf): 37 items; supermarket aisle "product" → 23 vs "can" → 99.
+- API spend for all dev + demo: under $1 of $150 (every image call is $0.0025).
 
 ## Run it
 ```sh

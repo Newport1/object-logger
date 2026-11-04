@@ -3,8 +3,10 @@
 __pycache__/
 sessions/*
 !sessions/sample/
+!sessions/sample-video/
+sessions/sample*/export.zip
+fixtures/*.mov
 *.pyc
 .remember/
 .claude/
 uploads/
-sessions/sample/export.zip

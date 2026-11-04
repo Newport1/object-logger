@@ -1,0 +1,415 @@
+{
+ "id": "sample-video",
+ "created_at": "2026-11-04T13:25:07-08:00",
+ "source_type": "video",
+ "source_file": "source.mov",
+ "concept_prompt": "toy",
+ "master_image": "master.png",
+ "numbered_image": "numbered.png",
+ "master_note": "panorama from 7 frames",
+ "width": 2048,
+ "height": 2031,
+ "item_count": 20,
+ "items": [
+  {
+   "number": 1,
+   "bbox": [
+    178,
+    301,
+    718,
+    925
+   ],
+   "confidence": 0.9336099624633789,
+   "mask_ref": "masks/001.png",
+   "crop_file": "crops/001.png",
+   "name": "",
+   "barcode_upc": "",
+   "price": "",
+   "notes": "",
+   "quantity": 1,
+   "status": "auto",
+   "id_label": "",
+   "id_confidence": null
+  },
+  {
+   "number": 2,
+   "bbox": [
+    880,
+    172,
+    1455,
+    857
+   ],
+   "confidence": 0.9336099624633789,
+   "mask_ref": "masks/002.png",
+   "crop_file": "crops/002.png",
+   "name": "",
+   "barcode_upc": "",
+   "price": "",
+   "notes": "",
+   "quantity": 1,
+   "status": "auto",
+   "id_label": "",
+   "id_confidence": null
+  },
+  {
+   "number": 3,
+   "bbox": [
+    1705,
+    396,
+    1952,
+    1014
+   ],
+   "confidence": 0.949367105960846,
+   "mask_ref": "masks/003.png",
+   "crop_file": "crops/003.png",
+   "name": "",
+   "barcode_upc": "",
+   "price": "",
+   "notes": "",
+   "quantity": 1,
+   "status": "auto",
+   "id_label": "",
+   "id_confidence": null
+  },
+  {
+   "number": 4,
+   "bbox": [
+    207,
+    903,
+    367,
+    1164
+   ],
+   "confidence": 0.8987342119216919,
+   "mask_ref": "masks/004.png",
+   "crop_file": "crops/004.png",
+   "name": "",
+   "barcode_upc": "",
+   "price": "",
+   "notes": "",
+   "quantity": 1,
+   "status": "auto",
+   "id_label": "",
+   "id_confidence": null
+  },
+  {
+   "number": 5,
+   "bbox": [
+    344,
+    936,
+    612,
+    1169
+   ],
+   "confidence": 0.8787879347801208,
+   "mask_ref": "masks/005.png",
+   "crop_file": "crops/005.png",
+   "name": "",
+   "barcode_upc": "",
+   "price": "",
+   "notes": "",
+   "quantity": 1,
+   "status": "auto",
+   "id_label": "",
+   "id_confidence": null
+  },
+  {
+   "number": 6,
+   "bbox": [
+    704,
+    664,
+    996,
+    1149
+   ],
+   "confidence": 0.9375000596046448,
+   "mask_ref": "masks/006.png",
+   "crop_file": "crops/006.png",
+   "name": "",
+   "barcode_upc": "",
+   "price": "",
+   "notes": "",
+   "quantity": 1,
+   "status": "auto",
+   "id_label": "",
+   "id_confidence": null
+  },
+  {
+   "number": 7,
+   "bbox": [
+    1014,
+    699,
+    1277,
+    1142
+   ],
+   "confidence": 0.9452055096626282,
+   "mask_ref": "masks/007.png",
+   "crop_file": "crops/007.png",
+   "name": "",
+   "barcode_upc": "",
+   "price": "",
+   "notes": "",
+   "quantity": 1,
+   "status": "auto",
+   "id_label": "",
+   "id_confidence": null
+  },
+  {
+   "number": 8,
+   "bbox": [
+    1342,
+    693,
+    1622,
+    1120
+   ],
+   "confidence": 0.9259259104728699,
+   "mask_ref": "masks/008.png",
+   "crop_file": "crops/008.png",
+   "name": "",
+   "barcode_upc": "",
+   "price": "",
+   "notes": "",
+   "quantity": 1,
+   "status": "auto",
+   "id_label": "",
+   "id_confidence": null
+  },
+  {
+   "number": 9,
+   "bbox": [
+    1908,
+    798,
+    1945,
+    1028
+   ],
+   "confidence": 0.6521739363670349,
+   "mask_ref": "masks/009.png",
+   "crop_file": "crops/009.png",
+   "name": "",
+   "barcode_upc": "",
+   "price": "",
+   "notes": "",
+   "quantity": 1,
+   "status": "auto",
+   "id_label": "",
+   "id_confidence": null
+  },
+  {
+   "number": 10,
+   "bbox": [
+    97,
+    1150,
+    384,
+    1479
+   ],
+   "confidence": 0.9452055096626282,
+   "mask_ref": "masks/010.png",
+   "crop_file": "crops/010.png",
+   "name": "",
+   "barcode_upc": "",
+   "price": "",
+   "notes": "",
+   "quantity": 1,
+   "status": "auto",
+   "id_label": "",
+   "id_confidence": null
+  },
+  {
+   "number": 11,
+   "bbox": [
+    422,
+    1157,
+    696,
+    1472
+   ],
+   "confidence": 0.941605806350708,
+   "mask_ref": "masks/011.png",
+   "crop_file": "crops/011.png",
+   "name": "",
+   "barcode_upc": "",
+   "price": "",
+   "notes": "",
+   "quantity": 1,
+   "status": "auto",
+   "id_label": "",
+   "id_confidence": null
+  },
+  {
+   "number": 12,
+   "bbox": [
+    724,
+    1159,
+    1002,
+    1469
+   ],
+   "confidence": 0.9452055096626282,
+   "mask_ref": "masks/012.png",
+   "crop_file": "crops/012.png",
+   "name": "",
+   "barcode_upc": "",
+   "price": "",
+   "notes": "",
+   "quantity": 1,
+   "status": "auto",
+   "id_label": "",
+   "id_confidence": null
+  },
+  {
+   "number": 13,
+   "bbox": [
+    1025,
+    1142,
+    1306,
+    1461
+   ],
+   "confidence": 0.949367105960846,
+   "mask_ref": "masks/013.png",
+   "crop_file": "crops/013.png",
+   "name": "",
+   "barcode_upc": "",
+   "price": "",
+   "notes": "",
+   "quantity": 1,
+   "status": "auto",
+   "id_label": "",
+   "id_confidence": null
+  },
+  {
+   "number": 14,
+   "bbox": [
+    1360,
+    1155,
+    1575,
+    1411
+   ],
+   "confidence": 0.9336099624633789,
+   "mask_ref": "masks/014.png",
+   "crop_file": "crops/014.png",
+   "name": "",
+   "barcode_upc": "",
+   "price": "",
+   "notes": "",
+   "quantity": 1,
+   "status": "auto",
+   "id_label": "",
+   "id_confidence": null
+  },
+  {
+   "number": 15,
+   "bbox": [
+    1566,
+    1232,
+    1795,
+    1401
+   ],
+   "confidence": 0.9064327478408813,
+   "mask_ref": "masks/015.png",
+   "crop_file": "crops/015.png",
+   "name": "",
+   "barcode_upc": "",
+   "price": "",
+   "notes": "",
+   "quantity": 1,
+   "status": "auto",
+   "id_label": "",
+   "id_confidence": null
+  },
+  {
+   "number": 16,
+   "bbox": [
+    22,
+    1449,
+    288,
+    1841
+   ],
+   "confidence": 0.9532163739204407,
+   "mask_ref": "masks/016.png",
+   "crop_file": "crops/016.png",
+   "name": "",
+   "barcode_upc": "",
+   "price": "",
+   "notes": "",
+   "quantity": 1,
+   "status": "auto",
+   "id_label": "",
+   "id_confidence": null
+  },
+  {
+   "number": 17,
+   "bbox": [
+    366,
+    1463,
+    760,
+    1846
+   ],
+   "confidence": 0.9532163739204407,
+   "mask_ref": "masks/017.png",
+   "crop_file": "crops/017.png",
+   "name": "",
+   "barcode_upc": "",
+   "price": "",
+   "notes": "",
+   "quantity": 1,
+   "status": "auto",
+   "id_label": "",
+   "id_confidence": null
+  },
+  {
+   "number": 18,
+   "bbox": [
+    788,
+    1484,
+    1150,
+    1839
+   ],
+   "confidence": 0.9569892287254333,
+   "mask_ref": "masks/018.png",
+   "crop_file": "crops/018.png",
+   "name": "",
+   "barcode_upc": "",
+   "price": "",
+   "notes": "",
+   "quantity": 1,
+   "status": "auto",
+   "id_label": "",
+   "id_confidence": null
+  },
+  {
+   "number": 19,
+   "bbox": [
+    1188,
+    1463,
+    1391,
+    1803
+   ],
+   "confidence": 0.9064327478408813,
+   "mask_ref": "masks/019.png",
+   "crop_file": "crops/019.png",
+   "name": "",
+   "barcode_upc": "",
+   "price": "",
+   "notes": "",
+   "quantity": 1,
+   "status": "auto",
+   "id_label": "",
+   "id_confidence": null
+  },
+  {
+   "number": 20,
+   "bbox": [
+    1307,
+    1390,
+    1661,
+    1784
+   ],
+   "confidence": 0.941605806350708,
+   "mask_ref": "masks/020.png",
+   "crop_file": "crops/020.png",
+   "name": "",
+   "barcode_upc": "",
+   "price": "",
+   "notes": "",
+   "quantity": 1,
+   "status": "auto",
+   "id_label": "",
+   "id_confidence": null
+  }
+ ]
+}

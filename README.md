@@ -11,7 +11,9 @@ echo "MODEL_API_KEY=<your key from https://dev.meta.ai/platform>" > .env
 uvicorn app:app --port 8000
 ```
 
-Open http://localhost:8000. The bundled `sessions/sample/` (37 items) opens with zero API calls.
+Open http://localhost:8000. Two bundled sessions open with zero API calls: `sessions/sample/` (a 44-figure
+Bearbrick tray from one photo, prompt "toy", 44/44 found) and `sessions/sample-video/` (a 7 s phone walk-past
+of a toy shelf, stitched into a panorama, 20 detections for 19 toys).
 ffmpeg must be on PATH for video input.
 
 ## Use
@@ -50,5 +52,4 @@ fields are reserved for Muse Spark auto-ID, barcode read, price lookup, marketpl
 
 ## Credits
 
-Sample scene: "A colorful retro display…" by [PattayaPatrol](https://www.flickr.com/people/PattayaPatrol/),
-via Wikimedia Commons, CC BY-SA 4.0. Segmentation: Meta SAM 3.1. Mask decoding: `meta-sam-parser`.
+Sample scenes: the author's own collection. Segmentation: Meta SAM 3.1. Mask decoding: `meta-sam-parser`.

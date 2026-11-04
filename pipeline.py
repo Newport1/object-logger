@@ -153,8 +153,15 @@ def postprocess(dets, W, H):
     if not kept:
         return []
     bin_h = max(1.0, float(np.median([d["bbox"][3] - d["bbox"][1] for d in kept])))
-    kept.sort(key=lambda d: (int(((d["bbox"][1] + d["bbox"][3]) / 2) // bin_h), d["bbox"][0]))
-    return kept
+    # ponytail: greedy row clustering on center-y; fixed bins split a row whenever it straddled a bin edge
+    cy = lambda d: (d["bbox"][1] + d["bbox"][3]) / 2
+    rows = []
+    for d in sorted(kept, key=cy):
+        if rows and cy(d) - cy(rows[-1][0]) <= 0.5 * bin_h:
+            rows[-1].append(d)
+        else:
+            rows.append([d])
+    return [d for row in rows for d in sorted(row, key=lambda d: d["bbox"][0])]
 
 
 # ---------------------------------------------------------------- session files
