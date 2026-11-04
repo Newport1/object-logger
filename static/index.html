@@ -299,6 +299,7 @@
   function mutate(method, url, body) {
     if (busy) return Promise.resolve();
     showErr('');
+    setBusy(true, 'Saving…');
     return api(method, url, body).then(function (s) {
       setSession(s);
       return loadList(S.id);
@@ -306,7 +307,7 @@
       showErr('Error: ' + e.message);
       // re-sync from server so inputs don't show unsaved values
       if (S) api('GET', base()).then(setSession).catch(function () {});
-    });
+    }).then(function () { setBusy(false); });
   }
 
   $('mergebtn').addEventListener('click', function () {

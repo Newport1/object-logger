@@ -1,4 +1,4 @@
-import json, os, shutil, subprocess, tempfile
+import json, os, shutil, subprocess, tempfile, threading
 from pathlib import Path
 from typing import List
 
@@ -107,7 +107,8 @@ class Prompt(BaseModel):
 def resegment(sid: str, body: Prompt):
     get(sid)
     try:
-        return P.resegment(sid, clean_prompt(body.prompt))
+        with _LOCK:
+            return P.resegment(sid, clean_prompt(body.prompt))
     except HTTPException:
         raise
     except Exception as e:
@@ -122,14 +123,18 @@ class Patch(BaseModel):
     quantity: int | None = None
 
 
+_LOCK = threading.Lock()  # ponytail: one global lock; per-session locks if multi-user ever matters
+
+
 def mutate(sid, fn):
-    s = get(sid)
-    try:
-        return fn(s)
-    except KeyError:
-        raise err(404, "item not found")
-    except (ValueError, TypeError) as e:
-        raise err(400, str(e))
+    with _LOCK:  # load-modify-save must not interleave or the slower write wins and drops the other edit
+        s = get(sid)
+        try:
+            return fn(s)
+        except KeyError:
+            raise err(404, "item not found")
+        except (ValueError, TypeError) as e:
+            raise err(400, str(e))
 
 
 # NOTE: static path /items/merge and POST /items must be declared before /items/{number} routes (different verbs, fine)

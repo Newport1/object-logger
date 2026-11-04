@@ -240,8 +240,10 @@ def write_log(session):
                         it["status"], it["confidence"], *it["bbox"], it["crop_file"]])
 
 
-def save(session):
-    render_numbered(session)
+def save(session, render=False):
+    # ponytail: numbered.png costs ~1.7 s on a 2048px master, so item edits skip it; export renders fresh
+    if render:
+        render_numbered(session)
     write_log(session)
     return session
 
@@ -262,7 +264,7 @@ def _populate(session, master, prompt):
         items.append(it)
     session["items"] = items
     session["concept_prompt"] = prompt
-    return save(session)
+    return save(session, render=True)
 
 
 def create_session(src_path, source_type, prompt, sid=None, force_fallback=False):
@@ -361,6 +363,7 @@ def add_manual(session, bbox):
 def export_zip(session):
     d = sdir(session["id"])
     out = d / "export.zip"
+    render_numbered(session)
     with zipfile.ZipFile(out, "w", zipfile.ZIP_DEFLATED) as z:
         for f in ("numbered.png", "master.png", "log.json", "log.csv"):
             z.write(d / f, f)
