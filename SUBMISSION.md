@@ -34,6 +34,9 @@ Three decoupled layers, each replaceable, joined by one file-based log (`log.jso
 "15 seconds of video → a catalog."
 
 ## Results on the demo scene (fill in)
+- Stand-in scene (CC BY-SA retro collectibles shelf, Wikimedia Commons): 37 items from prompt "object" in ~20 s;
+  synthetic 10 s walk-past of the same scene stitched into a 2042×719 panorama that passed the gate.
+- Supermarket aisle: "product" → 23 items, "can" → 99 items. The editable prompt is the lever.
 - Items in scene (hand count): __  · System count before fixes: __ (±__%) · After fixes: exact
 - API spend for all dev + demo: $__ of $150
 
