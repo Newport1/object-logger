@@ -1,0 +1,4 @@
+number,name,barcode_upc,price,quantity,notes,status,confidence,x1,y1,x2,y2,crop_file
+1,,,,1,,auto,0.8787879347801208,20,20,121,121,crops/001.png
+2,,,,1,,auto,0.6521739363670349,140,150,191,221,crops/002.png
+3,,,,1,,auto,0.8552036285400391,200,40,361,201,crops/003.png

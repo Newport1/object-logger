@@ -1,0 +1,75 @@
+{
+  "id": "sample",
+  "created_at": "2026-11-04T10:58:10-08:00",
+  "source_type": "image",
+  "source_file": "source.png",
+  "concept_prompt": "square",
+  "master_image": "master.png",
+  "numbered_image": "numbered.png",
+  "master_note": "photo",
+  "width": 400,
+  "height": 240,
+  "item_count": 3,
+  "items": [
+    {
+      "number": 1,
+      "bbox": [
+        20,
+        20,
+        121,
+        121
+      ],
+      "confidence": 0.8787879347801208,
+      "mask_ref": "masks/001.png",
+      "crop_file": "crops/001.png",
+      "name": "",
+      "barcode_upc": "",
+      "price": "",
+      "notes": "",
+      "quantity": 1,
+      "status": "auto",
+      "id_label": "",
+      "id_confidence": null
+    },
+    {
+      "number": 2,
+      "bbox": [
+        140,
+        150,
+        191,
+        221
+      ],
+      "confidence": 0.6521739363670349,
+      "mask_ref": "masks/002.png",
+      "crop_file": "crops/002.png",
+      "name": "",
+      "barcode_upc": "",
+      "price": "",
+      "notes": "",
+      "quantity": 1,
+      "status": "auto",
+      "id_label": "",
+      "id_confidence": null
+    },
+    {
+      "number": 3,
+      "bbox": [
+        200,
+        40,
+        361,
+        201
+      ],
+      "confidence": 0.8552036285400391,
+      "mask_ref": "masks/003.png",
+      "crop_file": "crops/003.png",
+      "name": "",
+      "barcode_upc": "",
+      "price": "",
+      "notes": "",
+      "quantity": 1,
+      "status": "auto",
+      "id_label": "",
+      "id_confidence": null
+    }
+  ]
+}
