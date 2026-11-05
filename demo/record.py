@@ -47,6 +47,16 @@ async def main():
         await pg.wait_for_function("!document.body.innerText.includes('Segmenting')"); await pg.wait_for_selector("#boxes .box")
         mark("cut_end"); await pg.evaluate("window.scrollTo(0,0)"); await asyncio.sleep(2.5)
         await glide(pg, 300, 500, 40); await glide(pg, 1100, 900, 60); await asyncio.sleep(1.0)
+        # slow scroll from the master down to the inventory list
+        for _ in range(14):
+            await pg.mouse.wheel(0, 90); await asyncio.sleep(0.35)
+        await asyncio.sleep(1.5)
+        # open two crops full-size
+        for n in (4, 12):
+            await click_at(pg, pg.locator(f"#rows tr[data-num='{n}'] img"), 0.3)
+            await pg.wait_for_selector("#overlay.show"); await asyncio.sleep(2.5)
+            await pg.keyboard.press("Escape"); await asyncio.sleep(0.6)
+        await pg.evaluate("window.scrollTo({top:0,behavior:'smooth'})"); await asyncio.sleep(1.5)
         # 2. hover a few boxes, click the fragment (#9), then its parent (#3)
         for n in (12, 5, 9):
             await click_at(pg, pg.locator(f"#boxes .box[data-num='{n}']"), 0.9)

@@ -30,7 +30,7 @@ Three decoupled layers, each replaceable, joined by one file-based log (`log.jso
    v2 plugs into the same `Item` fields: Muse Spark auto-ID from the crop, barcode read, price lookup, export adapters.
 
 ## Demo
-Recording: `demo/object_logger_demo.mp4` (58 s, headless Chromium driven by `demo/record.py`; the one-minute
+Recording: `demo/object_logger_demo.mp4` (76 s, headless Chromium driven by `demo/record.py`; the one-minute
 segmentation wait is played at 12x). Repo: https://github.com/Newport1/object-logger
 
 7 s walk-past video → panorama master → numbers bloom → click #9 (a leg fragment of #3), select #3, Merge →
